@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block css %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+    <script src="{% static 'script/script.js' %}"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <a href="{% url 'staff_list' %}" class="logo">
+                <h1>Staff</h1>
+            </a>
+            {% if user.is_authenticated %}
+                <p class="username">
+                    <i class="fa fa-grav" aria-hidden="true"></i>
+                    {% if user.first_name %}
+                        {{ user.first_name }}
+                    {% else %}
+                        {{ user.username }}
+                    {% endif %}
+                </p>
+                <a href="{% url 'logout' %}" class="login">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}" class="login">
+                    <i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                    Login
+                </a>
+            {% endif %}
+        </header>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+</body>
+</html>

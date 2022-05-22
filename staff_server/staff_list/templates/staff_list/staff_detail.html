@@ -1,0 +1,39 @@
+{% extends 'staff_list/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'style_staff_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="items">
+    <div class="item_title">
+        <p>{{ title }}</p>
+        <a href="{% url 'add_staff' %}">
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
+            Добавить
+        </a>
+    </div>
+    {% for item in object_list %}
+        <div class="item">
+            <p class="{% if not item.is_active %}canceled{% endif %}">{{ item.full_name }}
+                <span>{{ item.job_title }}</span>
+            </p>
+            {% if not item.is_active%}<i class="darkgray">deleted at {{item.updated}}</i>{% endif %}
+            {% if item.is_active%}
+                <div class="edit_block">
+                    <a href="{% url 'update' pk=item.id %}">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </a>
+                    <a href="{% url 'delete' pk=item.id %}">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+    <div class="buttn_block">
+        <a href="{% url 'staff_list' %}" class="button btn_cancel">Отмена</a>
+    </div>
+</section>
+{% endblock %}

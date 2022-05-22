@@ -1,0 +1,30 @@
+.login_form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    margin: 40px auto;
+}
+
+p input {
+    padding: 7px;
+    font-size: 1.1em;
+    width: 384px;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    margin: 6px 0;
+}
+
+.btn_add {
+    margin-right: 6px;
+    background: burlywood;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+.register {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}

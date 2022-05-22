@@ -1,0 +1,79 @@
+.items {
+    width: 100%;
+    background: white;
+    border-radius: 0 0 6px 6px;
+    padding-bottom: 6px;
+    font-size: 1.2em;
+}
+
+.item_title {
+    display: flex;
+    background: gainsboro;
+    padding: 8px 12px;
+    border-radius: 6px 6px 0 0;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.item_title a {
+    text-decoration: none;
+    color: black;
+}
+
+.item_title a:hover {
+    text-decoration: underline;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px;
+}
+
+.item p span {
+    margin-left: 30px;
+    font-size: .8em;
+    color: rgb(119, 118, 118);
+}
+
+.canceled {
+    text-decoration: line-through;
+    color: rgb(119, 118, 118);
+}
+
+.darkgray {
+    color: darkgray;
+}
+
+.item:hover {
+    background: rgba(164, 167, 167, 0.11);
+}
+
+edit_block {
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.edit_block a {
+    text-decoration: none;
+    color: lightgrey;
+}
+
+.edit_block a:hover {
+    color: rgb(119, 118, 118);
+}
+
+.btn_cancel {
+    background: gainsboro;
+    margin-right: 12px;
+}
+
+@media screen and (max-width: 900px) {
+    .darkgray {
+        display: none;
+    }
+}

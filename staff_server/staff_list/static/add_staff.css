@@ -1,0 +1,72 @@
+.add {
+    width: 100%;
+    background: white;
+    border-radius: 0 0 6px 6px;
+    padding-bottom: 6px;
+    font-size: 1.2em;
+}
+
+.add_title {
+    display: flex;
+    background: gainsboro;
+    padding: 8px 12px;
+    border-radius: 6px 6px 0 0;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.add_form {
+    padding: 0 6px;
+}
+
+.add_form p {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 10px;
+    align-items: center;
+}
+
+.btn_add {
+    background-color: rgb(251, 176, 176);
+}
+
+.btn_cancel {
+    background-color: #FAFBFC;
+    margin-left: 6px;
+}
+
+.buttn_block {
+    margin-top: 4px;
+}
+
+.add_form p input {
+    padding: 7px;
+    font-size: 1.1em;
+    width: 740px;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+}
+
+.add_form p select {
+    padding: 7px;
+    font-size: .8em;
+    width: 755px;
+    height: 37px;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+}
+
+@media screen and (max-width: 900px) {
+    .add_form p {
+        align-items: stretch;
+    flex-direction: column;
+    }
+    .add_form p input {
+        width: auto;
+    }
+    .add_form p select {
+        width: auto;
+    }
+}

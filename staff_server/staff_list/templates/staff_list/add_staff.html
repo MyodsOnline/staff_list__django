@@ -1,0 +1,20 @@
+{% extends 'staff_list/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'add_staff.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="add">
+    <p class="add_title">Добавить персонал:</p>
+        <form method="post" action="{% url 'add_staff' %}" class="add_form">
+        {% csrf_token %}
+            {{ form.as_p }}
+            <div class="buttn_block">
+                <input type="submit" value="Добавить" class="button btn_add">
+                <a href="{% url 'staff_list' %}" class="button btn_cancel">Отмена</a>
+            </div>
+        </form>
+</section>
+{% endblock %}

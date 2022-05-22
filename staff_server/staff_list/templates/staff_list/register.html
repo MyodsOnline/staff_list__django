@@ -1,0 +1,36 @@
+{% extends 'staff_list/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'login_form.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="login_form">
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %}
+        {{ form.non_filed.errors }}
+        <p>
+            <label for="{{ form.username.id_for_label }}" class="uname" data-icon="u" > Имя пользователя </label><br>
+            {{ register_form.username }}
+        </p>
+        <p>
+            <label for="{{ form.password1.id_for_label }}" class="youpasswd" data-icon="p"> Пароль </label><br>
+            {{ register_form.password1 }}
+        </p>
+        <p>
+            <label for="{{ form.password2.id_for_label }}" class="youpasswd" data-icon="p"> Повторите пароль </label><br>
+            {{ register_form.password2 }}
+        </p>
+        <div class="buttn_block">
+            <input type="submit" value="Регистрация" class="button btn_add">
+            <a href="{% url 'staff_list' %}" class="button btn_cancel">Отмена</a>
+        </div>
+    </form>
+    {% if register_form.errors %}
+        <div class="errorlist_block">
+            {{ register_form.errors|escape }}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

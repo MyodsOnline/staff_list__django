@@ -1,0 +1,94 @@
+
+
+h2 {
+    background: gainsboro;
+    padding: 6px;
+    border-radius: 6px 6px 0 0;
+    text-align: center;
+    color: rgb(119, 118, 118);
+}
+
+h3 {
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    line-height: 1.3em;
+}
+
+section {
+    flex-grow: 1;
+}
+
+section:nth-child(even) {
+    margin: 0 5px;
+}
+
+.object_item {
+    padding-bottom: 2px;
+}
+
+.item, .object_item_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.object_item:hover {
+    background: rgba(164, 167, 167, 0.11);
+    border-radius: 2px;
+}
+
+.object_item_title {
+    padding: 4px;
+}
+
+.object_item_title a {
+    color: lightgrey;
+}
+
+.object_item_title a:hover {
+    color: rgb(119, 118, 118);
+}
+
+.object_item_body {
+    padding-left: 4px;
+}
+
+label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.cust_dis {
+    opacity: 0;
+    margin-right: -2px;
+}
+
+.cust_act {
+    position: absolute;
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+}
+
+.cust_dis:checked ~ .cust_act {
+    background-color: red;
+    box-shadow: 0 0 3px 1px deeppink;
+}
+
+.object_item_list {
+    margin: 0 0 3px;
+    padding: 6px;
+    border-radius: 0 0 6px 6px;
+    background: white;
+}
+
+@media screen and (max-width: 900px) {
+    section:nth-child(even) {
+        margin: 0;
+    }
+}
