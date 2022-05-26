@@ -14,7 +14,9 @@
                 {% if substation.organization.pk == organization.pk %}
                     <div class="object_item">
                         <div class="object_item_title">
-                            <h3 data-id="object-{{ substation.id }}">{{ substation.name }}</h3>
+                            <h3 data-id="object-{{ substation.id }}">{{ substation.name }}
+                                <i class="fa fa-angle-down checker" aria-hidden="true"></i>
+                            </h3>
                             {% if user.is_authenticated %}
                             <a href="{{ substation.get_absolute_url }}">
                                 <i class="fa fa-cog" aria-hidden="true"></i>
@@ -24,12 +26,13 @@
                         <ul class="object_item_body">
                             {% for item in staff %}
                                 {% if item.job.pk == substation.pk and item.is_active %}
-                                    <li class="object_item_element">
-                                        <label>
+                                    <li class="object_item_element ok">
+                                        <label class="label_for_checkbox">
                                             <input type="checkbox" class="cust_dis">
                                             <span class="cust_act"></span>
                                             {{ item.full_name }}
                                         </label>
+                                        <i class="fa fa-share copy" aria-hidden="true"></i>
                                     </li>
                                 {% endif %}
                             {% endfor %}

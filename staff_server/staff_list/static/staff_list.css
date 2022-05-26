@@ -44,11 +44,29 @@ section:nth-child(even) {
     padding: 4px;
 }
 
-.object_item_title a {
+.object_item_title a,
+.checker,
+.fa-share {
     color: lightgrey;
 }
 
-.object_item_title a:hover {
+.object_item_element {
+    display: flex;
+    align-items: baseline;
+}
+
+.fa-share {
+    visibility: hidden;
+    cursor: pointer;
+}
+
+.object_item_element:hover .fa-share {
+    visibility: visible;
+}
+
+.object_item_title a:hover,
+.checker:hover,
+.fa-share:hover {
     color: rgb(119, 118, 118);
 }
 
@@ -61,6 +79,10 @@ label {
     display: flex;
     align-items: center;
     position: relative;
+}
+
+.copy {
+    margin-left: auto;
 }
 
 .cust_dis {
@@ -85,6 +107,10 @@ label {
     padding: 6px;
     border-radius: 0 0 6px 6px;
     background: white;
+}
+
+.ok {
+    display: none;
 }
 
 @media screen and (max-width: 900px) {

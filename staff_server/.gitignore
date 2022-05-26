@@ -10,6 +10,7 @@ __pycache__/
 .Python
 venv/
 /venv/
+/staff_server/staff_list/fixtures/
 /.idea/
 ../.idea/
 env/
