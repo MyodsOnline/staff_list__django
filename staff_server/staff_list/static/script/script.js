@@ -1,7 +1,10 @@
 
 const buttons = document.querySelectorAll(".checker");
 const staffs = document.querySelectorAll("input");
+const copy = document.querySelectorAll(".copy")
 
+// console.log(buttons)
+// console.log(staffs)
 
 const handleClickTitle = (event) => {
 	let el = event.target;
@@ -28,11 +31,23 @@ const handleClickStaff = (event) => {
 	staff_el_li.classList.toggle('checked')
 }
 
+const handleClickCopy = (event) => {
+	let copy_el = event.target;
+	let copyed_val = copy_el.previousElementSibling.innerText;
+	console.log(copyed_val);
+	copyed_val.select();
+	document.execCommand('copy');
+}
+
 buttons.forEach(button => {
 	button.addEventListener('click', handleClickTitle)
 })
 
 staffs.forEach(staff => {
 	staff.addEventListener('click', handleClickStaff)
+})
+
+copy.forEach(go => {
+	go.addEventListener('click', handleClickCopy)
 })
 
